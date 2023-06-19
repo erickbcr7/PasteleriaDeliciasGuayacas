@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Williams Geovanny Carrillo Fuentes">
+  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="icon" href="Imagenes/pasteleria.png">
+  <title>Formulario de Postres</title>
+  <style>
+        body {
+      background-color: #f5f5f5;
+    }
+    .background {
+      background-color: #c2991d;
+      margin: 0;
+      padding: 1px;
+      height: 100%;
+    }
+    .menu {
+      background-color: rgb(194, 209, 29);
+      margin: 0px;
+      padding: 10px;
+      height: 100%;
+    }
+    .forminput{
+    font-family: "sans-serif"; 
+    font-size: 11pt;
+    padding-top: 25px;
+    text-align: center;
+    align-items: center;
+    background-color: #f8bc63;
+    display: flex; 
+    flex-direction: column;
+    min-height: 100vb;
+  }
+  .formcustomer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    
+  }
+  .formu{
+    display: flex;
+    flex-direction: column;
+  }
+  #aceptar{
+    width: 90px;
+    
+  }
+  </style>
+</head>
+<body>
+  <header class="background">
+    <h1 class="encabezado">DELICIAS GUAYACAS</h1>
+    <div class="logo">
+      <img src="Imagenes/pasteleria.png" alt="Las Delicias Guayacass">
+    </div>
+  <nav class="menu">
+    <ul>
+      <li><a href="index.html">MENU</a></li>
+      <li><a href="Nosotros.html">SOBRE NOSOTROS</a></li> 
+      <li><a href="Tortas.html">TORTAS</a></li>
+      <li><a href="Postres.html">POSTRES</a></li>
+      <li><a href="Bocaditos.html">BOCADITOS</a></li> 
+      <button class="login"><a href="formLogin.html">INICIAR SESIÓN</a></button>
+  </ul>
+  </nav>
+</header>
+    <section>
+      <h2>Ingrese los datos de la compra:</h2>
+      <form class="formcustomer">
+       
+        <div style="display:flex; justify-content: center;gap: 300px;margin: 80px;">
+          <div class="formu">
+            <label>Nombre:</label>
+            <input type="text" id="nombre" name="nombre" size="40" placeholder="Williams Carrillo">
+          </div>
+          
+          <div class="formu">
+            <label for="porcion">Seleccione las porciones:</label><br><br>
+            <input type="radio" id="1p" name="porcion" value="1" /> 1<br>
+            <input type="radio" id="2p" name="porcion" value="2" /> 2<br>
+            <input type="radio" id="3p" name="porcion" value="3" /> 3<br>
+          </div >
+          
+          <div class="formu">
+            <label>Selecciones los topings:</label>
+            <input type="checkbox" name="Gomitas" value="1" id="Gomitas" />Gomitas </br>
+            <input type="checkbox" name="Jalea de chocolate" value="2" id="Jalea de chocolate" />Jalea de chocolate </br>
+            <input type="checkbox" name="Marshmallows" value="3" id="Marshmallows" />Marshmallows  </br>
+          </div>
+        </div>                    
+        <button id="aceptar">Aceptar</button>
+      </form>
+     
+    </section>
+    <section id="payinput" class="forminput">
+        <h2>Información de facturación</h2>
+        <p>Ingrese los datos de su tarjeta de crédito/débito para efectuar el pago de su pedido.</p><br>
+        <img src="Imagenes/tarjetas.png" alt="imagen de tarjetas de credito" width="600"><br><br>
+        
+        <form id="formpay" style="align-items: center;">
+            <div>
+                <div >
+                    <label>Nombre: </label>
+                    <input type="text" id="nombre" name="nombre" size="40" placeholder="Williams Carrillo"><br>
+                </div><br>
+                <div >
+                    <label>Dirección: </label>
+                    <input type="text" id="direccion" name="direccion" size="40" placeholder="Entrada de la 8"><br>
+                </div><br>
+                <div >
+                    <label>Correo electrónico: </label>
+                    <input type="text" id="email" name="email" size="40" placeholder="alguien@ejemplo.com"><br>
+                </div><br>
+                <div >
+                    <label>Nombre del titular de la tarjeta: </label>
+                    <input type="text" id="nombretitular" name="nombredetitular" size="40" placeholder="Williams Carrillo"><br>
+                </div><br>
+                <div>
+                    <label>Número de la tarjeta: </label>
+                    <input type="text" id="numerotarjeta" name="numerotarjeta" size="40" placeholder="XXXX XXXX XXXX XXXX"><br>
+                </div><br>
+                <div>
+                    <label>Código de seguridad (CVV): </label>
+                    <input type="password" id="cvvtarjeta" name="cvvtarjeta" size="40" placeholder="123"><br>
+                </div><br>
+                <div>
+                    <label>Fecha de vencimiento: </label>
+                    <select id="mesvcmto" name="mesv" class="inputfecha">
+                        <option value="0">Mes </option>
+                        <option value="1">01</option>
+                        <option value="2">02</option>
+                        <option value="3">03</option>
+                        <option value="4">04</option>
+                        <option value="5">05</option>
+                        <option value="6">06</option>
+                        <option value="7">07</option>
+                        <option value="8">08</option>
+                        <option value="9">09</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+                    
+                    <select id="aniovcmto" name="aniov" class="inputfecha">
+                        <option value="0">Año </option>
+                        <option value="2023">2023</option>
+                        <option value="2024">2024</option>
+                        <option value="2025">2025</option>
+                        <option value="2026">2026</option>
+                        <option value="2027">2027</option>
+                        <option value="2028">2028</option>
+                        <option value="2029">2029</option>
+                        <option value="2030">2030</option>
+                        <option value="2031">2031</option>
+                        <option value="2032">2032</option>
+                        <option value="2033">2033</option>
+                        <option value="2034">2034</option>
+                        <option value="2035">2035</option>
+                        <option value="2036">2036</option>
+                        <option value="2037">2037</option>
+                    </select><br>
+                </div>
+            </div>
+            
+            <div style="padding-top:50px;">
+                <button id="cancelButton" onclick="history.back()">Cancelar</button>
+                <button id="payButton" >Confirmar pago</button>
+            </div>
+        </form>
+    </section>
+    <section id="sitio">
+      <div class="sitio">
+        <h2>SOBRE EL SITIO</h2>
+        <p><li><a href="#">Preguntas Frecuentes</a></li></p>
+        <p><li><a href="#">Terminos y Condiciones</a></li></p>
+        <p><li><a href="#">Politicas de Privacidad</a></li></P>
+      </div>
+      <div class="contactos">
+        <h2>CONTACTOS</h2>
+        <p>Tél:0963847762</p>
+        <p>Dirección: Guayacanes 3ra Etapa</p>
+        <p>E-mail:deliciasguayacas@gmail.com</p>
+      </div>
+    </section>
+    
+    <footer>
+      <p> &copy; Autor |  Grupo 3 Pasteleria Delicias Guayacas</p>
+    </footer>
+</body>
+</html>

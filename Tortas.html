@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Ejemplo de HTML5">
+    <meta name="keywords" content="HTML5, CSS3, JavaScript">
+    <meta name="author" content="Jean Carlos Rivera Herrera">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="icon" href="Imagenes/pasteleria.png">
+    <title>Tortas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .background {
+            background-color: #c2991d;
+            margin: 0;
+            padding: 1px;
+            height: 100%;
+        }
+
+        .menu {
+            background-color: rgb(194, 209, 29);
+            margin: 0px;
+            padding: 10px;
+            height: 100%;
+        }
+
+        .boton {
+            display: block;
+            width: 200px;
+            margin: 0 auto;
+            padding: 10px;
+            text-align: center;
+            background-color: #afa34c;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 50px;
+            margin-bottom: 50px;
+          }
+        .catalogo {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .producto {
+            width: 300px;
+            text-align: center;
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #fff;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            margin-right: 20px;
+        }
+
+        .producto:last-child {
+            margin-right: 0;
+        }
+
+        .producto img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .producto h2 {
+            margin-top: 10px;
+            color: #333;
+        }
+
+        .producto .price {
+            color: #f00;
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        function cambiarFuente() {
+            var elementos = document.getElementsByTagName("body");
+            if (elementos.length > 0) {
+                var body = elementos[0];
+                body.style.fontFamily = "Courier New, monospace";
+            }
+            
+        }
+    </script>
+</head>
+<body>
+    <header class="background">
+        <h1 class="encabezado">DELICIAS GUAYACAS</h1>
+        <div class="logo">
+          <img src="Imagenes/pasteleria.png" alt="Las Delicias Guayacass">
+        </div>
+      <nav class="menu">
+        <ul>
+          <li><a href="index.html">MENU</a></li>
+          <li><a href="Nosotros.html">SOBRE NOSOTROS</a></li> 
+          <li><a href="Tortas.html">TORTAS</a></li>
+          <li><a href="Postres.html">POSTRES</a></li>
+          <li><a href="Bocaditos.html">BOCADITOS</a></li> 
+          <button class="login"><a href="formLogin.html">INICIAR SESIÓN</a></button>
+      </ul>
+      </nav>
+    </header>
+<button onclick="cambiarFuente()">Cambiar Fuente</button>
+
+        <h2>Catálogo de Tortas</h2>
+
+        <div class="catalogo">
+            <div class="producto">
+                <img src="https://th.bing.com/th/id/OIP.0P2IWtTSR2kfEL8b9pD8ngHaE9?w=243&h=180&c=7&r=0&o=5&dpr=2.5&pid=1.7" alt="Torta de mango">
+                <h2>Torta de mango</h2>
+                <div class="price">$14.99</div>
+            </div>
+            <div class="producto">
+                <img src="https://th.bing.com/th/id/OIP.j2o5xlmuv2EL_zOhTI_rTQHaFp?w=226&h=180&c=7&r=0&o=5&dpr=2.5&pid=1.7" alt="Torta de frutilla">
+                <h2>Torta de frutilla</h2>
+                <div class="price">$12.99</div>
+            </div>
+            <div class="producto">
+                <img src="https://th.bing.com/th/id/OIP.34m1WdS5eQCUQDXxOpwamwHaFj?w=230&h=180&c=7&r=0&o=5&dpr=2.5&pid=1.7" alt="Torta de oreo">
+                <h2>Torta de oreo</h2>
+                <div class="price">$10.99</div>
+            </div>
+            <div class="producto">
+                <img src="https://th.bing.com/th/id/OIP.1jKwa8B2200c-p2hP7PySAHaE6?w=281&h=186&c=7&r=0&o=5&dpr=2.5&pid=1.7" alt="Torta de maracuyá">
+                <h2>Torta de maracuyá</h2>
+                <div class="price">$17.99</div>
+            </div>
+        </div>
+        <a href="formTortas.html" class="boton">¡Compra ahora!</a>
+        <section id="sitio">
+            <div class="sitio">
+              <h2>SOBRE EL SITIO</h2>
+              <p><li><a href="#">Preguntas Frecuentes</a></li></p>
+              <p><li><a href="#">Terminos y Condiciones</a></li></p>
+              <p><li><a href="#">Politicas de Privacidad</a></li></P>
+            </div>
+            <div class="contactos">
+              <h2>CONTACTOS</h2>
+              <p>Tél:0963847762</p>
+              <p>Dirección: Guayacanes 3ra Etapa</p>
+              <p>E-mail:deliciasguayacas@gmail.com</p>
+            </div>
+          </section>
+
+        <footer>
+            <p class="autor-texto"> &copy; Autor |  Jean Carlos Rivera Herrera.</p>
+        </footer>
+</div> 
+</body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Grupo 3">
+  <link rel="stylesheet" href="css/estilos.css">
+  <style>
+    body {
+      background-color: #ffffffbc;
+    }
+    .background {
+      background-color: #c2991d;
+      margin: 0;
+      padding: 1px;
+      height: 10%;
+    }
+
+    .menu {
+      background-color: rgb(194, 209, 29);
+      margin: 0px;
+      padding: 10px;
+      height: 100%;
+    }
+    
+    h1 {
+      text-align: center;
+      color: #f44336;
+      margin: 20px;
+    }
+    
+    form {
+      margin-bottom: 100px;
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      width: 100%;
+      background-color: #7300ff3c;
+      border-radius: 5px;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+      margin-bottom: 100px;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+    
+    input {
+      width: 95%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-bottom: 10px;
+      display: block;
+    }
+    
+    .btn {
+      display: block;
+      margin: 50px auto;
+      background-color: #a74d0c;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      width: 30%;
+      text-align: center;
+    }
+
+  </style>
+  <title>Registro</title>
+</head>
+<body>
+    <header class="background">
+        <h1 class="encabezado">DELICIAS GUAYACAS</h1>
+        <div class="logo">
+          <img src="Imagenes/pasteleria.png" alt="Las Delicias Guayacass">
+        </div>
+      <nav class="menu">
+        <ul>
+          <li><a href="index.html">MENU</a></li>
+          <li><a href="Nosotros.html">SOBRE NOSOTROS</a></li> 
+          <li><a href="Tortas.html">TORTAS</a></li>
+          <li><a href="Postres.html">POSTRES</a></li>
+          <li><a href="Bocaditos.html">BOCADITOS</a></li> 
+          <button class="login"><a href="formLogin.html">INICIAR SESIÓN</a></button>
+      </ul>
+      </nav>
+   </header>
+  <h1>REGISTRO</h1>
+  
+  <form id="formLogin" name="forLogin">
+    <label for="nombre">Nombres:</label>
+    <input type="text" id="nombre" placeholder="Ingrese sus nombres">
+    
+    <label for="apellido">Apellidos:</label>
+    <input type="text" id="apellido" placeholder="Ingrese sus apellidos">
+
+    <label for="usuario">Usuario:</label>
+    <input type="text" id="usuario" placeholder="Ej: fbustos777">
+    
+    <label for="correo">Email:</label>
+    <input type="text" id="correo" placeholder="example@email.com">
+    
+    <label for="password">Contraseña:</label>
+    <input type="password" id="password" placeholder="***********">
+    
+    <input type="submit" class="btn" value="Registrarse">
+  </form>
+
+  <script type="text/javascript">
+    var form = document.querySelector("#formLogin"); // selecciona el primero que cumple con el selector
+    form.addEventListener('submit', validarLogin);
+
+    function validarLogin(event) {
+    var resultado = true;
+    // obtener los elementos a validar
+    var nombres = document.getElementById("nombre");
+    var apellidos = document.getElementById("apellido");
+    var nUsuario = document.getElementById("usuario");
+    var correos = document.getElementById("correo");
+    var psw = document.getElementById("password");
+    // expresiones regulares (RegEx)
+    var letra = /^[a-z ,.'-]+$/i;// letrasyespacio
+    var correo = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+    var letraN = /^[a-z0-9 ,.'-]+$/i; // letras, números y espacios
+    limpiarMensajes();
+
+    //validacion para nombres
+    if (nombres.value === '') {
+        resultado = false;
+        mensaje("El nombre es requerido", nombres);
+    } else if (!letra.test(nombres.value)) { 
+        resultado = false;
+        mensaje("El nombre debe contener solo letras", nombres);
+    } else if (nombres.value.length > 20) {
+        resultado = false;
+        mensaje("Maximo 20 caracteres", nombres);
+    }
+    //validacion para apellido
+    if (apellidos.value === '') {
+        resultado = false;
+        mensaje("El apellido es requerido", apellidos);
+    } else if (!letra.test(apellidos.value)) { 
+        resultado = false;
+        mensaje("El apellido debe contener solo letras", apellidos);
+    } else if (apellidos.value.length > 20) {
+        resultado = false;
+        mensaje("Maximo 20 caracteres", apellidos);
+    }
+    //validacion para nombre de usuario
+    if (nUsuario.value === '') {
+        resultado = false;
+        mensaje("El usuario es requerido", nUsuario);
+
+    } else if (!letraN.test(nUsuario.value)) { 
+        resultado = false;
+        mensaje("El usuario debe contener letras y Numeros", nUsuario);
+    }
+    //validacion para email
+    if (correos.value === "") {
+        resultado = false;
+        mensaje("El e-mail es requerido", correos);
+    } else if (!correo.test(correos.value)) {
+        resultado = false;
+        mensaje("Email no es correcto", correos);
+    }
+    //validacion para contrasena
+    if (psw.value === "") {
+    resultado = false;
+    mensaje("La contraseña es requerida", psw);
+    }
+
+    if (!resultado) {
+        event.preventDefault();  // detener el evento  //stop form from submitting
+    }else{
+        alert("FORMULARIO ENVIADO CORRECTAMENTE");
+    }
+    }
+
+    function mensaje(cadenaMensaje, elemento) {
+        elemento.focus();
+        var nodoPadre = elemento.parentNode;
+        var nodoMensaje = document.createElement("span");
+        nodoMensaje.textContent = cadenaMensaje;
+        nodoMensaje.setAttribute("class", "mensajeError");
+        nodoPadre.appendChild(nodoMensaje);
+    }
+
+    function limpiarMensajes() {
+        var mensajes = document.querySelectorAll(".mensajeError");// retorna un arreglo
+        for (let i = 0; i < mensajes.length; i++) {
+        mensajes[i].remove();// remueve o elimina un elemento de mi doc html
+        }
+    }
+</script>
+  
+  <section id="sitio">
+    <div class="sitio">
+      <h2>SOBRE EL SITIO</h2>
+      <p><li><a href="#">Preguntas Frecuentes</a></li></p>
+      <p><li><a href="#">Terminos y Condiciones</a></li></p>
+      <p><li><a href="#">Politicas de Privacidad</a></li></P>
+    </div>
+    <div class="contactos">
+      <h2>CONTACTOS</h2>
+      <p>Tél:0963847762</p>
+      <p>Dirección: Guayacanes 3ra Etapa</p>
+      <p>E-mail:deliciasguayacas@gmail.com</p>
+    </div>
+  </section>
+  
+  <footer>
+    <p> &copy; Autor |  Grupo 3 Pasteleria Delicias Guayacas</p>
+  </footer>
+</body>
+</html>

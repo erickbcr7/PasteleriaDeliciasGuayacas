@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Grupo 3">
+    <link rel="stylesheet" href="css/estilos.css">
+    <title>Sobre Nosotros</title>
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .background {
+            background-color: #c2991d;
+            margin: 0;
+            padding: 1px;
+            height: 100%;
+        }
+
+        .menu {
+            background-color: rgb(194, 209, 29);
+            margin: 0px;
+            padding: 10px;
+            height: 100%;
+        }
+
+        form input, textarea {
+            display: block;
+            margin: 0 auto 10px;
+            width: 30%;
+            padding: 10px;
+        }
+        .btn{
+            width: 8%;
+            justify-content: center;
+            display: inline-flex;
+            margin: 20px auto;
+            background-color: #a74d0c;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body> 
+<header class="background">
+    <h1 class="encabezado">DELICIAS GUAYACAS</h1>
+    <div class="logo">
+        <img src="Imagenes/pasteleria.png" alt="Las Delicias Guayacass">
+      </div>
+    <nav class="menu">
+        <ul>
+            <li><a href="index.html">MENU</a></li>
+            <li><a href="Nosotros.html">SOBRE NOSOTROS</a></li> 
+            <li><a href="Tortas.html">TORTAS</a></li>
+            <li><a href="Postres.html">POSTRES</a></li>
+            <li><a href="Bocaditos.html">BOCADITOS</a></li> 
+            <button class="login"><a href="formLogin.html">INICIAR SESIÓN</a></button>
+        </ul>
+    </nav>
+</header>
+<section id="grupo">
+    <p>En Pastelería Delicias Guayacas, nos esforzamos por ofrecer una amplia variedad de opciones dulces para todos los gustos y ocasiones. Ya sea que estén celebrando un cumpleaños, un aniversario, una boda u otro evento especial, estamos aquí para ayudarles a crear momentos dulces e inolvidables.</p>
+    <p>No duden en contactarnos y dejar un mensaje si tienen alguna pregunta o si desean realizar un pedido personalizado. Estamos aquí para hacer realidad sus sueños de sabor y dulzura.</p>
+    <p>¡Gracias por elegir Pastelería Delicias Guayacas!</p>
+    <h2>Acerca del grupo 3</h2>
+    <p>Somos un grupo de 4 personas, cada uno ha hecho una página de la pastelería y aquí dejamos nuestras redes sociales:</p>
+    <div class="miembro">
+        <h3>Jean Rivera</h3>
+        <p>Lider</p>
+        <div class="redes">
+            <a href="https://www.facebook.com"><img src="Imagenes/facebook.png" alt="Facebook"></a>
+            <a href="https://www.instagram.com"><img src="Imagenes/instagram.png" alt="Instagram"></a>
+        </div>
+    </div>
+    <div class="miembro">
+        <h3>Erick Choez</h3>
+        <p>Co-lider</p>
+        <div class="redes">
+            <a href="https://www.facebook.com"><img src="Imagenes/facebook.png" alt="Facebook"></a>
+            <a href="https://www.instagram.com"><img src="Imagenes/instagram.png" alt="Instagram"></a>
+        </div>
+    </div>
+    <div class="miembro">
+        <h3>Samuel Infante</h3>
+        <p>Manager</p>
+        <div class="redes">
+            <a href="https://www.facebook.com"><img src="Imagenes/facebook.png" alt="Facebook"></a>
+            <a href="https://www.instagram.com"><img src="Imagenes/instagram.png" alt="Instagram"></a>
+        </div>
+    </div>
+    <div class="miembro">
+        <h3>Williams Carrillo</h3>
+        <p>CEO</p>
+        <div class="redes">
+            <a href="https://www.facebook.com"><img src="Imagenes/facebook.png" alt="Facebook"></a>
+            <a href="https://www.instagram.com"><img src="Imagenes/instagram.png" alt="Instagram"></a>
+        </div>
+    </div>
+</section>
+<section id="sugerencias">
+    <h2>Déjanos tu mensaje</h2>
+    <form id="formNosotros" name="formNosotros">
+        <div>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre completo">
+        </div>
+        <div>
+        <label for="email">Email:</label>
+        <input type="text" id="correo" name="correo" placeholder="example@email.com">
+        </div>
+        <div>
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="msj" name="msj" placeholder="Escribe tus impresiones"></textarea>
+        </div>
+        <div>
+        <input type="submit" class="btn" value="Enviar">
+        <input type="reset" class="btn" value="Cancelar">
+        </div>
+    </form>
+</section>
+<script type="text/javascript">
+    var form = document.querySelector("#formNosotros"); // selecciona el primero que cumple con el selector
+    form.addEventListener('submit', validar);
+
+    function validar(event) {
+    var resultado = true;
+    // obtener los elementos a validar
+    var nombres = document.getElementById("nombre");
+    var correos = document.getElementById("correo");
+    var mensajes = document.getElementById("msj");
+    // expresiones regulares (RegEx)
+    var letra = /^[a-z ,.'-]+$/i;// letrasyespacio
+    var correo = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+
+    limpiarMensajes();
+
+    //validacion para nombres
+    if (nombres.value === '') {
+        resultado = false;
+        mensaje("El nombre es requerido", nombres);
+    } else if (!letra.test(nombres.value)) { 
+        resultado = false;
+        mensaje("El nombre debe contener solo letras", nombres);
+    } else if (nombres.value.length > 20) {
+        resultado = false;
+        mensaje("Maximo 20 caracteres", nombres);
+    }
+    //validacion email
+    if (correos.value === "") {
+        resultado = false;
+        mensaje("El Email es requerido", correos);
+    } else if (!correo.test(correos.value)) {
+        resultado = false;
+        mensaje("Email no es correcto", correos);
+    }
+    // comentarios
+    if (mensajes.value === "") {
+        resultado = false;
+        mensaje("Se requiere un mensaje", mensajes);
+    }
+
+    if (!resultado) {
+        event.preventDefault();  // detener el evento  //stop form from submitting
+    }else{
+        alert("FORMULARIO ENVIADO CORRECTAMENTE");
+    }
+    }
+
+    function mensaje(cadenaMensaje, elemento) {
+        elemento.focus();
+        var nodoPadre = elemento.parentNode;
+        var nodoMensaje = document.createElement("span");
+        nodoMensaje.textContent = cadenaMensaje;
+        nodoMensaje.setAttribute("class", "mensajeError");
+        nodoPadre.appendChild(nodoMensaje);
+    }
+
+    function limpiarMensajes() {
+        var mensajes = document.querySelectorAll(".mensajeError");// retorna un arreglo
+        for (let i = 0; i < mensajes.length; i++) {
+        mensajes[i].remove();// remueve o elimina un elemento de mi doc html
+        }
+    }
+</script>
+<section id="sitio">
+    <div class="sitio">
+      <h2>SOBRE EL SITIO</h2>
+      <p><li><a href="#">Preguntas Frecuentes</a></li></p>
+      <p><li><a href="#">Terminos y Condiciones</a></li></p>
+      <p><li><a href="#">Politicas de Privacidad</a></li></P>
+    </div>
+    <div class="contactos">
+      <h2>CONTACTOS</h2>
+      <p>Tél:0963847762</p>
+      <p>Dirección: Guayacanes 3ra Etapa</p>
+      <p>E-mail:deliciasguayacas@gmail.com</p>
+    </div>
+  </section>
+<footer>
+    <p>&copy; Grupo 3 - Pastelería Delicias Guayacas</p>
+</footer>
+</body>
+</html>

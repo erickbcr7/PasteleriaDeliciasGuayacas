@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Erick Bryan Choez Rosado">
+  <link rel="stylesheet" href="css/estilos.css">
+  <title>Bocaditos</title>
+  <!-- estilos internos -->
+  <style>
+    body {
+      background-color: #ffffffbc;
+    }
+    .background {
+      background-color: #c2991d;
+      margin: 0;
+      padding: 1px;
+      height: 10%;
+    }
+    h3{
+      background-color: #f44336;
+      padding: 10px;
+      text-align: center;
+      font-size: 16px;
+      width: 32%;
+      height: 5%;
+      margin: auto;
+      margin-bottom: 10px;
+    }
+    h3::first-letter{
+      font-size: 20px;
+      font-weight: bold;
+      color: orange;
+    }
+    .menu {
+      background-color: rgb(194, 209, 29);
+      margin: 0px;
+      padding: 10px;
+      height: 100%;
+    }
+    .pedido {
+      display: block;
+      width: 200px;
+      margin: 0 auto;
+      padding: 10px;
+      text-align: center;
+      background-color: #afa34c;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 20px;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    .contenido {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 20px;
+    }
+
+    .bocadito {
+      background-color: #a02c1c46;
+      padding: 20px;
+      border-radius: 5px;
+    }
+
+    .bocadito img {
+      margin-top: 10px;
+      border-radius: 5px;
+      width: 300px;
+      height: 200px;
+    }
+
+    .contenido p{
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+    <header class="background">
+        <h1 class="encabezado">DELICIAS GUAYACAS</h1>
+        <div class="logo">
+          <img src="Imagenes/pasteleria.png" alt="Las Delicias Guayacass">
+        </div>
+      <nav class="menu">
+        <ul>
+          <li><a href="index.html">MENU</a></li>
+          <li><a href="Nosotros.html">SOBRE NOSOTROS</a></li> 
+          <li><a href="Tortas.html">TORTAS</a></li>
+          <li><a href="Postres.html">POSTRES</a></li>
+          <li><a href="Bocaditos.html">BOCADITOS</a></li> 
+          <button class="login"><a href="formLogin.html">INICIAR SESIÓN</a></button>
+      </ul>
+      </nav>
+    </header>
+    <section id="bocaditos">
+    <h2 style="color:#5c1f17; font-size: 40px">Nuestros Bocaditos</h2>
+    <div class="contenido">
+        <div class="bocadito">
+            <h3 style="color: yellow;">Macarons</h3>
+            <img id="1" src="Imagenes/macaron.jpg" alt="Macarons" onmouseover="Despues(this)" onmouseout="Antes(this)">
+            <p>Deliciosos macarons con una variedad de sabores y colores.</p>
+            <p>Perfectos para cualquier ocasión especial.</p>
+            <p>$3.99</p>
+        </div>
+        <div class="bocadito">
+            <h3 style="color: yellow;">Mini cupcakes</h3>
+            <img id="2" src="Imagenes/cupcake.jpg" alt="Mini cupcakes" onmouseover="Despues(this)" onmouseout="Antes(this)">
+            <p>Pequeños y deliciosos cupcakes decorados con diferentes diseños y sabores.</p>
+            <p>Ideales para cumpleaños y eventos.</p>
+            <p>$4.99</p>
+        </div>
+        <div class="bocadito">
+            <h3 style="color: yellow;">Pastelitos de fruta</h3>
+            <img id="3" src="Imagenes/pastelitos.jpg" alt="Pastelitos de fruta" onmouseover="Despues(this)" onmouseout="Antes(this)">
+            <p>Exquisitos pastelitos rellenos de frutas frescas y cubiertos con una suave capa de crema.</p>
+            <p>Una delicia refrescante.</p>
+            <p>$5.99</p>
+        </div>
+        <div class="bocadito">
+            <h3 style="color: yellow;">Galletas decoradas</h3>
+            <img id="4" src="Imagenes/galletitas.jpg" alt="Galletas decoradas" onmouseover="Despues(this)" onmouseout="Antes(this)">
+            <p>Galletas artesanales decoradas a mano con glaseado de colores y diseños personalizados.</p>
+            <p>Perfectas para regalar o disfrutar en cualquier momento.</p>
+            <p>$2.99</p>
+        </div>
+        <div class="bocadito">
+            <h3 style="color: yellow;">Chocolate trufa</h3>
+            <img id="5" src="Imagenes/trufas.jpg" alt="Trufas de chocolate" onmouseover="Despues(this)" onmouseout="Antes(this)">
+            <p>Deliciosas trufas de chocolate con un suave relleno y cobertura de cacao en polvo.</p>
+            <p>Un placer irresistible para los amantes del chocolate.</p>
+            <p>$2.99</p>
+        </div>
+        <div class="bocadito">
+            <h3 style="color: yellow;">Tarta de frutas</h3>
+            <img id="6" src="Imagenes/tarta.jpg" alt="Tarta de frutas" onmouseover="Despues(this)" onmouseout="Antes(this)">
+            <p>Tarta fresca y ligera con una base crujiente y relleno de frutas de temporada.</p>
+            <p>Una opción saludable y deliciosa para disfrutar en cualquier época del año.</p>
+            <p>$7.99</p>
+        </div>
+        <div class="bocadito">
+            <h3 style="color: yellow;">Donuts</h3>
+            <img id="7" src="Imagenes/donuts.jpg" alt="Donuts" onmouseover="Despues(this)" onmouseout="Antes(this)">
+            <p>Irresistibles donuts glaseados en diferentes sabores y decorados con toppings variados.</p>
+            <p>El complemento perfecto para un desayuno o merienda dulce.</p>
+            <p>$3.99</p>
+        </div>
+        <div class="bocadito">
+            <h3 style="color: yellow;">Cheesecake</h3>
+            <img id="8" src="Imagenes/cheesecake.jpg" alt="Cheesecake" onmouseover="Despues(this)" onmouseout="Antes(this)">
+            <p>Cremosa y suave tarta de queso con una base de galleta y una capa de frutas frescas.</p>
+            <p>Un clásico que nunca decepciona.</p>
+            <p>$6.99</p>
+        </div>
+        <div class="bocadito">
+            <h3 style="color: yellow;">Almendras con caramelo</h3>
+            <img id="9" src="Imagenes/almendras.jpg" alt="Almendras con caramelo" onmouseover="Despues(this)" onmouseout="Antes(this)">
+            <p>Almendras tostadas y caramelizadas con un ligero toque de sal.</p>
+            <p>Un snack dulce y salado perfecto para disfrutar en cualquier momento del día.</p>
+            <p>$0.99</p>
+        </div>
+        <div class="bocadito">
+            <h3 style="color: yellow;">Profiteroles</h3> 
+            <img id="10" src="Imagenes/profiteroles.jpg" alt="Profiteroles" onmouseover="Despues(this)" onmouseout="Antes(this)">
+            <p>Bolitas de masa rellenas de crema y bañadas en chocolate.</p>
+            <p>Una delicia clásica de la pastelería que siempre deja un buen sabor de boca.</p>
+            <p>$1.99</p>
+        </div>
+    </div>
+    <a href="formBocaditos.html" class="pedido">¡Haz tu pedido ahora!</a>
+    </section>
+    <script>
+      function Despues(img) {
+        if (img.id === "1") {
+          img.src = "Imagenes/Img2/macarons2.jpg";
+        } else if (img.id === "2") {
+          img.src = "Imagenes/Img2/cupcakes2.jpg";
+        } else if (img.id === "3"){
+          img.src = "Imagenes/Img2/pastelitos2.jpg";
+        } else if (img.id === "4") {
+          img.src = "Imagenes/Img2/galletitas2.jpg";
+        } else if (img.id === "5") {
+          img.src = "Imagenes/Img2/trufas2.jpg";
+        } else if (img.id === "6") {
+          img.src = "Imagenes/Img2/tarta2.jpg";
+        } else if (img.id === "7") {
+          img.src = "Imagenes/Img2/donuts2.jpg";
+        } else if (img.id === "8") {
+          img.src = "Imagenes/Img2/cheesecake2.jpg";
+        } else if (img.id === "9") {
+          img.src = "Imagenes/Img2/almendras2.jpg";
+        } else if (img.id === "10") {
+          img.src = "Imagenes/Img2/profiteroles2.jpg";
+        }
+      }
+    
+      function Antes(img) {
+        if (img.id === "1") {
+          img.src = "Imagenes/macaron.jpg";
+        } else if (img.id === "2") {
+          img.src = "Imagenes/cupcake.jpg";
+        } else if (img.id === "3") {
+          img.src = "Imagenes/pastelitos.jpg";
+        } else if (img.id === "4") {
+          img.src = "Imagenes/galletitas.jpg";
+        } else if (img.id === "5") {
+          img.src = "Imagenes/trufas.jpg";
+        } else if (img.id === "6") {
+          img.src = "Imagenes/tarta.jpg";
+        } else if (img.id === "7") {
+          img.src = "Imagenes/donuts.jpg";
+        } else if (img.id === "8") {
+          img.src = "Imagenes/cheesecake.jpg";
+        } else if (img.id === "9") {
+          img.src = "Imagenes/almendras.jpg";
+        } else if (img.id === "10") {
+          img.src = "Imagenes/profiteroles.jpg";
+        }
+      }
+    </script>
+  
+    <section id="sitio">
+      <div class="sitio">
+        <h2>SOBRE EL SITIO</h2>
+        <p><li><a href="#">Preguntas Frecuentes</a></li></p>
+        <p><li><a href="#">Terminos y Condiciones</a></li></p>
+        <p><li><a href="#">Politicas de Privacidad</a></li></P>
+      </div>
+      <div class="contactos">
+        <h2>CONTACTOS</h2>
+        <p>Tél:0963847762</p>
+        <p>Dirección: Guayacanes 3ra Etapa</p>
+        <p>E-mail:deliciasguayacas@gmail.com</p>
+      </div>
+    </section>
+
+  <footer>
+    <p> &copy; Autor |  Erick Bryan Choez Rosado</p>
+  </footer>
+
+</body>
+</html>

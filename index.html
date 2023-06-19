@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF=8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Samuel Jeremías Infante Arévalo">
+    <link rel="stylesheet" href="css/estilos.css">
+    <title>Menu</title>
+    
+<!--Contenido del Menu-->
+<body>
+  <header class="background">
+    <h1 class="encabezado">DELICIAS GUAYACAS</h1>
+    <div class="logo">
+      <img src="Imagenes/pasteleria.png" alt="Las Delicias Guayacass">
+    </div>
+  <nav class="menu">
+    <ul>
+      <li><a href="index.html">MENU</a></li>
+      <li><a href="Nosotros.html">SOBRE NOSOTROS</a></li> 
+      <li><a href="Tortas.html">TORTAS</a></li>
+      <li><a href="Postres.html">POSTRES</a></li>
+      <li><a href="Bocaditos.html">BOCADITOS</a></li> 
+      <button class="login"><a href="formLogin.html">INICIAR SESIÓN</a></button>
+  </ul>
+  </nav>
+</header>
+    
+<!--Contenido de la Pagina-->
+<head>
+    <style>
+      body {
+      background-color: #ffffffbc;
+    }
+    .background {
+      background-color: #c2991d;
+      margin: 0;
+      padding: 1px;
+      height: 10%;
+    }
+    .menu {
+      background-color: rgb(194, 209, 29);
+      margin: 0px;
+      padding: 10px;
+      height: 100%;
+    } 
+        .tortas {
+            border: 1px solid lightblue;
+        }
+        .tortas h1 {
+            background: #ffdf99;
+            margin:0;
+
+        }
+
+        .postres {
+            border: 1px solid lightblue;
+        }
+        .postres h1 {
+            background: #fff899;
+            margin:0;
+
+        }
+
+        .bocaditos {
+            border: 1px solid lightblue;
+        }
+        .bocaditos h1 {
+            background: #c2ff99;
+            margin:0;
+
+        }
+
+        .Llenar-Formulario {
+            border: 1px solid lightblue;
+        }
+        .Llenar-Formulario h1 {
+            background: #9acfe7;
+            margin:0;
+
+        }
+
+    </style>
+</head>
+<section id="menu">
+    <div class="tortas">
+        <h1>TORTAS</h1>
+        <h2>¿No se te antoja una deliciosa torta remojada?</h2>
+        <img src="https://venecia.com.co/wp-content/uploads/2019/10/milo-2-web-2019.png" alt="Logo de mi página web">
+        <p>Las tortas mojadas son un tipo de pastel que se caracteriza por su textura húmeda y jugosa. A diferencia de los pasteles tradicionales, las tortas mojadas se empapan con algún líquido, como almíbar, leche condensada, crema o algún jarabe dulce, lo que les da una consistencia suave y un sabor intenso.</p>
+        <a href="Tortas.html"><button class="ver-mas">Ver más</button></a>
+        <script type="text/javascript">
+            // obtener elemento y registrar su evento
+            const titulo = document.querySelector('.tortas h1');
+            titulo.addEventListener('click', function (e) {// funcion anonima que recibe el evento
+                //formas de acceder al parrafo
+                // let p = document.querySelector('.noticia p');
+                // let p = this.parentNode.children[2];
+                //otra forma en lugar de this seria e.target
+               let p = e.target.parentNode.children[2];
+        
+               console.log(this);//h1, elemento sobre el que se da el evento
+                console.log(e.target);//h1, elemento sobre el que se da el evento
+                
+                if (p.style.display !== 'none') {// display:none hace que el elemento no se dibuje y por ello no ocupa espacio
+                    p.style.display = 'none';
+                } else {
+                    p.style.display = 'block';
+               }
+                
+               /*  if (p.style.visibility !== 'hidden') {// visibility:hidden hace que el elemento no se visualice pero si ocupa espacio
+                    p.style.visibility = 'hidden';
+                } else {
+                    p.style.visibility = 'visible';
+                }*/
+            });
+        
+        </script>
+    </div>
+    
+<section id="menu">
+    <div class="postres">
+        <h1>POSTRES</h1>
+        <h2>Variedad de Postres</h2>
+        <img src="https://i.blogs.es/1c733d/postres/1366_2000.jpg" alt="Logo de mi página web">
+        <p>Las tortas mojadas son un tipo de pastel que se caracteriza por su textura húmeda y jugosa. A diferencia de los pasteles tradicionales, las tortas mojadas se empapan con algún líquido, como almíbar, leche condensada, crema o algún jarabe dulce, lo que les da una consistencia suave y un sabor intenso</p>
+        <a href="Postres.html"><button class="ver-mas">Ver más</button></a>
+        <script type="text/javascript">
+            // obtener elemento y registrar su evento
+            const titulo = document.querySelector('.postres h1');
+            titulo.addEventListener('click', function (e) {// funcion anonima que recibe el evento
+                //formas de acceder al parrafo
+                // let p = document.querySelector('.noticia p');
+                // let p = this.parentNode.children[2];
+                //otra forma en lugar de this seria e.target
+               let p = e.target.parentNode.children[2];
+        
+               console.log(this);//h1, elemento sobre el que se da el evento
+                console.log(e.target);//h1, elemento sobre el que se da el evento
+                
+                if (p.style.display !== 'none') {// display:none hace que el elemento no se dibuje y por ello no ocupa espacio
+                    p.style.display = 'none';
+                } else {
+                    p.style.display = 'block';
+               }
+                
+               /*  if (p.style.visibility !== 'hidden') {// visibility:hidden hace que el elemento no se visualice pero si ocupa espacio
+                    p.style.visibility = 'hidden';
+                } else {
+                    p.style.visibility = 'visible';
+                }*/
+            });
+        </script>
+    </div>
+</section>
+<section>
+    <div class="bocaditos">
+        <h1>BOCADITOS</h1>
+        <h2>Dulces y Bocaditos Tradicionales</h2>
+    <div id="datos">
+        <img id="imagen1" src="https://www.elsaloncito.com/wp-content/uploads/2021/04/Saloncito-15-600x600.jpg" alt="imagen luz" " onmouseover="encender(this)" onmouseout="apagar(this)"/>
+        <br/>
+        <p>Sumérgete en el encanto y la nostalgia de los dulces y bocaditos tradicionales que ofrecemos en nuestro negocio. Cada uno de ellos es un tesoro culinario que nos transporta a tiempos pasados, evocando recuerdos de la infancia y celebraciones familiares. Desde galletas caseras con chips de chocolate hasta malvaviscos suaves y esponjosos, nuestra selección está llena de sabores auténticos y delicias clásicas.</p>
+        <a href="Bocaditos.html"><button class="ver-mas">Ver más</button></a>
+    </div>
+    <script>
+        function encender(nodoA) {
+            //1. obtener elementos a manipular
+            let img = document.getElementById('imagen1');
+
+            //img.setAttribute("src","img/on.jpg"),
+            img.src = "https://www.elsaloncito.com/wp-content/uploads/2021/04/Saloncito-15-600x600.jpg";
+            nodoA.textContent = 'Encendido';
+        }
+        function apagar(nodoA) {
+            //1. obtener elementos a manipular
+            let img = document.getElementById('imagen1');
+            img.src = "https://bocaditos-quito.com/wp-content/uploads/2019/02/Mesa-de-bocaditos-magic-service.jpg";
+            nodoA.textContent = 'Apagado';
+        }
+    </script>
+        <script type="text/javascript">
+            // obtener elemento y registrar su evento
+            const titulo = document.querySelector('.bocaditos h1');
+            titulo.addEventListener('click', function (e) {// funcion anonima que recibe el evento
+                //formas de acceder al parrafo
+                // let p = document.querySelector('.noticia p');
+                // let p = this.parentNode.children[2];
+                //otra forma en lugar de this seria e.target
+               let p = e.target.parentNode.children[2];
+        
+               console.log(this);//h1, elemento sobre el que se da el evento
+                console.log(e.target);//h1, elemento sobre el que se da el evento
+                
+                if (p.style.display !== 'none') {// display:none hace que el elemento no se dibuje y por ello no ocupa espacio
+                    p.style.display = 'none';
+                } else {
+                    p.style.display = 'block';
+               }
+                
+               /*  if (p.style.visibility !== 'hidden') {// visibility:hidden hace que el elemento no se visualice pero si ocupa espacio
+                    p.style.visibility = 'hidden';
+                } else {
+                    p.style.visibility = 'visible';
+                }*/
+            });
+        
+        </script>
+    </div>
+</section>
+<section>
+    <div class="Llenar-Formulario">
+        <h1>FORMULARIO</h1>
+        <h2>AYUDANOS A MEJORAR</h2>
+        <img src="https://impulsapopular.com/wp-content/uploads/2019/04/4387-Plataformas-para-crear-formularios-en-línea-para-tu-negocio.jpg" alt="Logo de mi página web">
+        <p>"¡Gracias por compartir tus deliciosas creaciones con nosotros! Para incluir tus productos en nuestro menú, por favor completa el siguiente formulario con los detalles correspondientes. Queremos asegurarnos de ofrecer a nuestros clientes una amplia variedad de opciones irresistibles. Estamos emocionados de conocer tus productos y compartirlos con el mundo. ¡Adelante!".</p>
+        <button class="llenar-formulario"<li><a href="formMenu.html">Llenar Formulario</a></li></button>
+        <script type="text/javascript">
+            // obtener elemento y registrar su evento
+            const titulo = document.querySelector('.Llenar-Formulario h1');
+            titulo.addEventListener('click', function (e) {// funcion anonima que recibe el evento
+                //formas de acceder al parrafo
+                // let p = document.querySelector('.noticia p');
+                // let p = this.parentNode.children[2];
+                //otra forma en lugar de this seria e.target
+               let p = e.target.parentNode.children[2];
+        
+               console.log(this);//h1, elemento sobre el que se da el evento
+                console.log(e.target);//h1, elemento sobre el que se da el evento
+                
+                if (p.style.display !== 'none') {// display:none hace que el elemento no se dibuje y por ello no ocupa espacio
+                    p.style.display = 'none';
+                } else {
+                    p.style.display = 'block';
+               }
+                
+               /*  if (p.style.visibility !== 'hidden') {// visibility:hidden hace que el elemento no se visualice pero si ocupa espacio
+                    p.style.visibility = 'hidden';
+                } else {
+                    p.style.visibility = 'visible';
+                }*/
+            });
+        
+        </script>
+
+    </div>
+</section>
+
+<!--Contenido del Pie de Pagina-->
+<section id="sitio">
+    <div class="sitio">
+      <h2>SOBRE EL SITIO</h2>
+      <p><li><a href="#">Preguntas Frecuentes</a></li></p>
+      <p><li><a href="#">Terminos y Condiciones</a></li></p>
+      <p><li><a href="#">Politicas de Privacidad</a></li></P>
+    </div>
+    <div class="contactos">
+      <h2>CONTACTOS</h2>
+      <p>Tél:0963847762</p>
+      <p>Dirección: Guayacanes 3ra Etapa</p>
+      <p>E-mail:deliciasguayacas@gmail.com</p>
+    </div>
+  </section>
+<footer>
+    <p>&copy; Autor | Samuel Jeremías Infante Arévalo.</p>
+</footer>
+</body>
+</html>

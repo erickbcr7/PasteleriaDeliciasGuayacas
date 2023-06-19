@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Samuel Jeremias Infante Arevalo">
+  <link rel="stylesheet" href="css/estilos.css">
+  <title>Formulario - Menu</title>
+  <style>
+    /* Encabezados */
+    body {
+      background-color: #ffffffbc;
+    }
+    .background {
+      background-color: #c2991d;
+      margin: 0;
+      padding: 1px;
+      height: 10%;
+    }
+    .menu {
+      background-color: rgb(194, 209, 29);
+      margin: 0px;
+      padding: 10px;
+      height: 100%;
+    } 
+    h1 {
+      color: #ff0303;
+      text-align: center;
+    }
+    main {
+      padding: 40px;
+      background-color: #9eecdfa0;
+      margin-bottom: 30px;
+      box-shadow: 0 0 10px rgba(20, 209, 200, 0.575);
+      text-align: center;
+    }
+    #formulario {
+      margin: 50px auto;
+      max-width: 500px;
+      text-align: center;
+
+
+    }
+
+    #formulario label {
+      color: #17234d;
+      display: block;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    #formulario input[type="text"],
+    #formulario input[type="tel"],
+    #formulario textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 2px solid #202020;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    #formulario input[type="submit"] {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #94a09f;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<!--Contenido del Menu-->
+<body>
+  <header class="background">
+    <h1 class="encabezado">DELICIAS GUAYACAS</h1>
+    <div class="logo">
+      <img src="Imagenes/pasteleria.png" alt="Las Delicias Guayacass">
+    </div>
+  <nav class="menu">
+    <ul>
+      <li><a href="index.html">MENU</a></li>
+      <li><a href="Nosotros.html">SOBRE NOSOTROS</a></li> 
+      <li><a href="Tortas.html">TORTAS</a></li>
+      <li><a href="Postres.html">POSTRES</a></li>
+      <li><a href="Bocaditos.html">BOCADITOS</a></li> 
+      <button class="login"><a href="formLogin.html">INICIAR SESIÓN</a></button>
+  </ul>
+  </nav>
+</header>
+
+  <!-- Contenido de la página -->
+  <h1>FORMULARIO</h1>
+  <main id="formulario">
+
+    <form id="formMenu" name="formMenu">
+      <label for="nombre">Nombres:</label>
+      <input type="text" id="nombres" name="nombre" size="26" placeholder="INGRESE SUS NOMBRES"><br><br>
+      
+      <label for="Dispositivo">Dispositivo donde contactarlo:</label>
+      <div>
+        <input class="dispositivo" id="tel" type="radio" name="dispositivo" value="T" />Telefono Convencional
+        <input class="dispositivo" id="smar" type="radio" name="dispositivo" value="S" />Smarphone
+      </div>
+
+      <input type="text" id="telefono" name="telefono" size="26" placeholder="INGRESE SU NUMERO"><br><br>
+ 
+      <label for="direccion">Dirección:</label>
+      <input type="text" id="direccion" name="direccion size="26" placeholder="INGRESE SU DIRECCION DOMICILIARIA"><br><br>
+
+      <label for="direccion">Correo Electronico:</label>
+      <input type="text" id="Correo" name="correo" size="26" placeholder="INGRESE SU CORREO ELECTRONICO"><br><br>
+      
+      <label for="calificación">Calificanos:</label>
+      <select id="categoria" name="categoria" class="categoria">
+        <option value="0">Puntaje </option>
+        <option value="1">1 </option>
+        <option value="2">2 </option>
+        <option value="3">3 </option>
+        <option value="4">4 </option>
+        <option value="5">5 </option>
+      </select>
+      <input type="text" id="calificación" name="calificación" size="26" placeholder="¿QUE TAL ES NUESTRO SERVICIO? EXCELENTE, BUENO, REGULAR..."><br><br>
+
+      <div>
+        <label>Fecha:</label>
+        <input type="date" name="fecha" id="fecha" class="formItem" />
+      </div>
+
+      <label for="observaciones">Observaciones:</label><br>
+      <textarea id="observaciones" name="observaciones" rows="4" cols="30"></textarea><br><br>
+
+      <input type="submit" value="Enviar Sugerencias">
+
+    </form>
+
+  </main>
+  <script>
+    // Obtener el formulario
+    var form = document.querySelector("#formMenu");
+    form.addEventListener('submit', validar);
+
+    function validar(event) {
+        var resultado = true;
+        var txtNombres = document.getElementById("nombres");
+        var radiosDispositivo = document.getElementsByName("dispositivo");
+        var txtTelefono = document.getElementById("telefono");
+        var txtDireccion = document.getElementById("direccion");
+        var txtCorreo = document.getElementById("Correo");
+        var selectCategoria = document.getElementById("categoria");
+        var txtCalificación = document.getElementById("calificación");
+        var Fecha = document.getElementById("fecha");
+        var txtObservaciones = document.getElementById("observaciones");
+
+        // Expresiones regulares (RegEx)
+        var letra = /^[a-z ,.'-]+$/i; // Letras y espacios
+        var correo = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+
+        // Validación de Nombres
+        if (txtNombres.value === '') {
+            resultado = false;
+            mensaje("Nombre es requerido", txtNombres);
+        } else if (!letra.test(txtNombres.value)) {
+            resultado = false;
+            mensaje("Nombre solo debe contener letras", txtNombres);
+        } else if (txtNombres.value.length > 20) {
+            resultado = false;
+            mensaje("Nombre máximo 20 caracteres", txtNombres);
+        }
+
+        // Validación de Género
+        var sel = false;
+        for (var i = 0; i < radiosDispositivo.length; i++) {
+            if (radiosDispositivo[i].checked) {
+                sel = true;
+                break;
+            }
+        }
+        if (!sel) {
+            resultado = false;
+            mensaje("Es requerido un dispositivo", radiosDispositivo[0]);
+        }
+
+        // Validación de Dirección
+        if (txtDireccion.value === '') {
+            resultado = false;
+            mensaje("Es requerida la Dirección", txtDireccion);
+        }
+
+
+        // Validación de Correo Electrónico
+        if (txtCorreo.value === '') {
+            resultado = false;
+            mensaje("Correo Electrónico es requerido", txtCorreo);
+        } else if (!correo.test(txtCorreo.value)) {
+            resultado = false;
+            mensaje("Correo Electrónico inválido", txtCorreo);
+        }
+
+        // Validación de Calificanos
+        if (selectCategoria.value === null || selectCategoria.value === '0') {
+        resultado = false;
+        mensaje("Seleccione el puntaje", selectCategoria);
+    }
+
+            // Validación de Fecha
+            if (Fecha.value === '') {
+            resultado = false;
+            mensaje("Seleccione la fecha actual", Fecha);
+        }
+
+            // Validación de Observaciones
+            if (txtObservaciones.value === '') {
+            resultado = false;
+            mensaje("Comente sus observaciones respectivo a la página", txtObservaciones);
+        }
+
+        if (resultado) {
+            alert("Formulario válido, se enviará el comentario");
+        }
+
+        event.preventDefault(); // Evita que se envíe el formulario si hay errores
+    }
+    // Función para mostrar un mensaje de alerta 
+
+    function mensaje(mensaje, elemento) {
+        alert(mensaje);
+        elemento.focus();
+    }
+
+</script>
+<!--Contenido del Pie de Pagina-->
+<section id="sitio">
+  <div class="sitio">
+  <h2>SOBRE EL SITIO</h2>
+  <p><li><a href="#">Preguntas Frecuentes</a></li></p>
+  <p><li><a href="#">Terminos y Condiciones</a></li></p>
+  <p><li><a href="#">Politicas de Privacidad</a></li></P>
+  </div>
+  
+  <div class="contactos">
+  <h2>CONTACTOS</h2>
+  <p>Tél:0963847762</p>
+  <p>Dirección: Guayacanes 3ra Etapa</p>
+  <p>E-mail:deliciasguayacas@gmail.com</p>
+  </div>
+</section>
+<footer>
+  <p>&copy; Autor | Samuel Jeremías Infante Arévalo.</p>
+</footer>
+  
+</body>
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Erick Bryan Choez Rosado">
+    <link rel="stylesheet" href="css/estilos.css">
+    <title>Pedido</title>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .background {
+            background-color: #c2991d;
+            margin: 0;
+            padding: 1px;
+            height: 100%;
+        }
+
+        .menu {
+            background-color: rgb(194, 209, 29);
+            margin: 0px;
+            padding: 10px;
+            height: 100%;
+        }
+
+        h1 {
+            color: #03596c;
+            font-size: 40px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .form {
+            width: 35%;
+            margin: 0 auto;
+            background-color: #da9b36a0;
+            padding: 50px;
+            border-radius: 5px;
+        }
+
+        .maquetacion {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: flex-start;
+        }
+
+        .elementos {
+            background-color: #ffffffa0;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+            width: 80%;     
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            padding-top: 10px;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="date"],
+        input[type="time"],
+        select {
+            width: 95%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+
+        .pago {
+            display: block;
+            text-align: left;
+            margin-bottom: 10px;
+            margin-bottom: 10px;
+        }
+
+        .pago input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        .pago label img {
+            height: 30px;
+            width: 30px;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+        .btn {
+            display: block;
+            width: 51%;
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #54e324;
+            color: #55260d;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .btnAtras {
+            display: inline-block;
+            padding: 10px;
+            background-color: #5e2727;
+            color: #fff;
+            text-align: left;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 40px;
+        }
+        
+    </style>
+</head>
+<body>
+    <header class="background">
+        <h1 class="encabezado">DELICIAS GUAYACAS</h1>
+        <div class="logo">
+          <img src="Imagenes/pasteleria.png" alt="Las Delicias Guayacass">
+        </div>
+      <nav class="menu">
+        <ul>
+          <li><a href="index.html">MENU</a></li>
+          <li><a href="Nosotros.html">SOBRE NOSOTROS</a></li> 
+          <li><a href="Tortas.html">TORTAS</a></li>
+          <li><a href="Postres.html">POSTRES</a></li>
+          <li><a href="Bocaditos.html">BOCADITOS</a></li> 
+          <button class="login"><a href="formLogin.html">INICIAR SESIÓN</a></button>
+      </ul>
+      </nav>
+    </header>
+    <section id="bocaditos">
+    
+    <h1>Pedidos a Domicilio</h1>
+
+    <div class="form">
+        <form id="formBocaditos" name="formBocaditos">
+        <div class="maquetacion">
+        <div class="elementos">
+        <div>
+        <label for="bocadito">¿Qué tipo de bocadito desea?</label>
+        
+        <select id="bocadito" name="bocadito">
+            <option value="0">- Seleccione una opción -</option>
+            <option value="1">Macarons</option>
+            <option value="2">Mini cupcakes</option>
+            <option value="3">Pastelitos de fruta</option>
+            <option value="4">Galletas decoradas</option>
+            <option value="5">Chocolate trufa</option>
+            <option value="6">Tarta de frutas</option>
+            <option value="7">Donuts</option>
+            <option value="8">Cheesecake</option>
+            <option value="9">Almendras con caramelo</option>
+            <option value="10">Profiteroles</option>
+        </select>
+        </div>
+        </div>
+
+        <div class="elementos">
+        <label for="cantidad">Cantidad</label>
+        <input type="number" id="cantidad" name="cantidad" placeholder="Max:100">
+        </div>
+
+        <div class="elementos">
+        <label for="fecha">Fecha de entrega</label>
+        <input type="date" id="fecha" name="fecha">
+        </div>
+
+        <div class="elementos">
+        <label for="hora">Hora de entrega</label>
+        <input type="time" id="hora" name="hora">
+        </div>
+
+        <div class="elementos">
+        <label for="direccion">Dirección domiciliaria</label>
+        <input type="text" id="direccion" name="direccion" placeholder="Ej:Guayacanes 3ra Etapa">
+        </div>
+
+        <div class="elementos">
+        <label>Método de Pago</label>
+        <div class="pago">
+            <input type="radio" id="paypal" name="metodoPago" value="paypal">
+            <label for="paypal">
+                <img src="Imagenes/logoPaypal.jpg" alt="PayPal">
+                PayPal
+            </label>
+        </div>
+        <div class="pago">
+            <input type="radio" id="tarjeta" name="metodoPago" value="tarjeta">
+            <label for="tarjeta">
+                <img src="Imagenes/tarjetaCredito.png" alt="Tarjeta de Crédito">
+                Tarjeta de Crédito
+            </label>
+        </div>
+        <div class="pago">
+            <input type="radio" id="tarjeta" name="metodoPago" value="tarjeta">
+            <label for="tarjeta">
+                <img src="Imagenes/tarjetaDebito.png" alt="Tarjeta de Débito">
+                Tarjeta de Débito
+            </label>
+        </div>
+        <div class="pago">
+            <input type="radio" id="transferencia" name="metodoPago" value="transferencia">
+            <label for="transferencia">
+                <img src="Imagenes/cuentaBancaria.png" alt="Cuenta Bancaria">
+                Cuenta Bancaria
+            </label>
+        </div>
+        </div>
+        <input type="submit" class="btn" value="Realizar Pago">
+        <input type="reset" class="btn" value="Cancelar">
+        </div>
+        </div>
+        </form>
+    </div>
+    <script type="text/javascript" src="js/validacionBocaditos.js"></script>
+    <a href="Bocaditos.html" class="btnAtras">Volver</a>
+    </section>
+    <section id="sitio">
+        <div class="sitio">
+          <h2>SOBRE EL SITIO</h2>
+          <p><li><a href="#">Preguntas Frecuentes</a></li></p>
+          <p><li><a href="#">Terminos y Condiciones</a></li></p>
+          <p><li><a href="#">Politicas de Privacidad</a></li></P>
+        </div>
+        <div class="contactos">
+          <h2>CONTACTOS</h2>
+          <p>Tél:0963847762</p>
+          <p>Dirección: Guayacanes 3ra Etapa</p>
+          <p>E-mail:deliciasguayacas@gmail.com</p>
+        </div>
+      </section>
+    <footer>
+        <p> &copy; Autor |  Erick Bryan Choez Rosado</p>
+    </footer>
+</body>
+</html>

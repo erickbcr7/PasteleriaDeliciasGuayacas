@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Rivera Herrera Jean Carlos">
+  <link rel="stylesheet" href="css/estilos.css">
+  <title>Formulario - Menu</title>
+  <style>
+    /* Encabezados */
+    body {
+      background-color: #f5f5f5;
+    }
+    .background {
+      background-color: #c2991d;
+      margin: 0;
+      padding: 1px;
+      height: 10%;
+    }
+    .menu {
+      background-color: rgb(194, 209, 29);
+      margin: 0px;
+      padding: 10px;
+      height: 100%;
+    }
+
+    .img {
+      align-items: center;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      width: 100px;
+      height: auto;
+      vertical-align: middle;
+    }
+
+    h1 {
+      color: #ff0303;
+      text-align: center;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-size: cover;
+      background-position: center;
+    }
+
+    header {
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #ff0000;
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    nav ul li {
+      display: inline;
+      margin-right: 10px;
+    }
+
+    main {
+      padding: 40px;
+      background-color: #fbfbfba0;
+      margin-bottom: 30px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .sitio ul {
+      display: flex;
+      justify-content: center;
+      display: block;
+
+    }
+
+    .sitio ul li {
+      padding: 10px;
+
+    }
+
+    .encabezado  {
+    margin-bottom: 0px;
+    color: #a7540c;
+    font-family: "Brush Script", cursive;
+    font-size: 50px;
+    }
+
+    h2 {
+    color: #a74d0c;
+    font-size: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+    }
+
+    p {
+      margin-bottom: 20px;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 20px;
+    }
+
+    .logo {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .logo img {
+      display: block;
+      margin: 0 auto;
+      max-width: 300px;
+      height: auto;
+    }
+
+    .logo img {
+      display: block;
+      margin: 0 auto;
+    }
+
+    .logo {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .logo img {
+      display: block;
+      margin: 0 auto;
+      max-width: 200px;
+      height: auto;
+    }
+
+    .logo img {
+      display: block;
+      margin: 0 auto;
+    }
+
+    /* Estilos para boton iniciar sesion */
+    .login {
+      padding: 10px 15px;
+      background-color: #ff6803;
+      border: none;
+      color: #fff;
+      font-weight: bold;
+      text-decoration: none;
+      cursor: pointer;
+      margin-right: 10px;
+    }   
+
+    /* Estilos para el formulario */
+    h1 {
+      color: rebeccapurple;
+      text-align: center;
+    }
+
+    h1 {
+      color: blue;
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    #formulario {
+      margin: 50px auto;
+      max-width: 500px;
+      text-align: center;
+
+
+    }
+
+    #formulario label {
+      color: blueviolet;
+      display: block;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    #formulario input[type="text"],
+    #formulario input[type="tel"],
+    #formulario textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 2px solid #1d0a0a;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    #formulario input[type="submit"] {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    #sitio {
+      display: flex;
+      justify-content: space-evenly;
+    }
+    footer {
+    background-color: #e19d3e;
+    padding: 20px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 14px;
+  }
+
+  </style>
+
+<script>
+  function validarFormulario() {
+      
+    var nombres = document.getElementById("nombre").value;
+    if (nombres.trim() === "") {
+      alert("Ingrese los nombres del cliente.");
+      return false;
+    }
+
+    var apellidos = document.getElementById("apellidos").value;
+    if (apellidos.trim() === "") {
+      alert("Ingrese los apellidos del cliente.");
+      return false;
+    }
+
+    var nombreTortas = document.getElementById("NombresdeTortas").value;
+    if (nombreTortas.trim() === "") {
+      alert("Ingrese el nombre de la torta.");
+      return false;
+    }
+
+    var categoria = document.getElementById("categoria").value;
+    if (categoria === "0") {
+      alert("Seleccione una categoría.");
+      return false;
+    }
+
+  
+    var tamaño = document.getElementById("Tamanio").value;
+    if (tamaño === "0") {
+      alert("Seleccione un tamaño.");
+      return false;
+    }
+
+    var fecha = document.getElementById("fecha").value;
+      if (fecha === "") {
+      alert("Por favor, ingresa una fecha de entrega.");
+      return false;
+    }
+
+    var instrucciones = document.getElementById("Instrucciondepedido").value;
+    if (instrucciones.trim() === "") {
+      alert("Ingrese las instrucciones de pedido.");
+      return false;
+    }
+
+
+    var entrega = document.getElementById("Entrega").checked;
+    var recogida = document.getElementById("Recogida").checked;
+
+  if (entrega && recogida) {
+  alert("Seleccione solo una opción entre entrega o recogida.");
+  return false;
+  }
+
+if (!entrega && !recogida) {
+alert("Seleccione una opción entre entrega o recogida.");
+return false;
+}
+    var cantidad = document.getElementById("Cantidad").value;
+    if (isNaN(cantidad) || cantidad <= 0) {
+      alert("Ingrese una cantidad.");
+      return false;
+    }
+
+    alert("Formulario enviado correctamente.");
+    return true;
+
+  }
+</script>
+
+</head>
+<body>
+  <header class="background">
+    <h1 class="encabezado">DELICIAS GUAYACAS</h1>
+    <div class="logo">
+      <img src="Imagenes/pasteleria.png" alt="Las Delicias Guayacass">
+    </div>
+  <nav class="menu">
+    <ul>
+      <li><a href="index.html">MENU</a></li>
+      <li><a href="Nosotros.html">SOBRE NOSOTROS</a></li> 
+      <li><a href="Tortas.html">TORTAS</a></li>
+      <li><a href="Postres.html">POSTRES</a></li>
+      <li><a href="Bocaditos.html">BOCADITOS</a></li> 
+      <button class="login"><a href="formLogin.html">INICIAR SESIÓN</a></button>
+  </ul>
+  </nav>
+</header>
+  
+  
+    <!-- Contenido de la página -->
+    <h1>FORMULARIO</h1>
+    <main id="formulario">
+      <form onsubmit="return validarFormulario()">
+  
+        <label for="nombre">Nombres del cliente:</label>
+        <input type="text" id="nombre" name="nombre" placeholder=" Jean Carlos"><br><br>
+  
+        <label for="nombre">Apellidos del cleinte:</label>
+        <input type="text" id="apellidos" name="apellidos" placeholder="Rivera Herrera "><br><br>
+  
+        <label>Nombre de Tortas: </label>
+        <input type="text" id="NombresdeTortas" name="NombredeTortas"  placeholder="Dulce de tres leches"><br>
+  
+        <label>categoria: </label>
+        <select id="categoria" name="categoria" class="categoria">
+         <option value="0">Elija una categoria </option>
+         <option value="1">Cumpleaños </option>
+         <option value="2">Boda </option>
+         <option value="3">Aniversarios </option>
+         <option value="4">tematicos </option>
+       </select>
+  
+       <label>Tamaño: </label>
+       <select id="Tamanio" name="Tamanio" class="Tamanio">
+        <option value="0">Elija un tamaño </option>
+        <option value="1">Grande </option>
+        <option value="2">Mediano </option>
+        <option value="3">Pequeño </option>
+      </select>
+  
+      <div class="elementos">
+        <label for="fecha">Fecha de entrega:</label>
+        <input type="date" id="fecha" name="fecha" required>
+        </div>
+
+      <label>Instruccion de pedido: </label>
+      <input type="text" id="Instrucciondepedido" name="Instrucciondepedido" size="40" placeholder="Alergica al durazno"><br>
+
+      <label>Entrega o Recogida: </label>
+      <label for="Entrega"><input type="checkbox" id="Entrega" name="Entrega"> Entrega</label>
+      <label for="Recogida"><input type="checkbox" id="Recogida" name="Recogida"> Recogida</label>
+   </select>
+
+   <label>Cantidad: </label>
+   <input type="text" id="Cantidad" name="Cantidad"  placeholder="2"><br>
+  
+   <div  style="padding-top:50px;">
+   <input type="submit" value="Agregar Producto">
+      </form>
+  
+    </main>
+    <section id="sitio">
+      <div class="sitio">
+        <h2>SOBRE EL SITIO</h2>
+        <p><li><a href="#">Preguntas Frecuentes</a></li></p>
+        <p><li><a href="#">Terminos y Condiciones</a></li></p>
+        <p><li><a href="#">Politicas de Privacidad</a></li></P>
+      </div>
+      <div class="contactos">
+        <h2>CONTACTOS</h2>
+        <p>Tél:0963847762</p>
+        <p>Dirección: Guayacanes 3ra Etapa</p>
+        <p>E-mail:deliciasguayacas@gmail.com</p>
+      </div>
+    </section>
+  
+    <footer>
+      <p> &copy; Autor | Rivera Herrera Jean Carlos.</p>
+    </footer>
+</body>
+</html>
